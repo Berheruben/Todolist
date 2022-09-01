@@ -47,6 +47,7 @@ display: flex;
 flex-direction: column;
 align-items: flex-start;
 padding: 8px 32px;
+
 gap: 8px;
 
 width: 126px;
