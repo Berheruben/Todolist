@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
-import {AddTodo,Todo,ToggleComplete} from './utils/type';
+import {AddTodo,Todo,ToggleComplete,ToggleDelete} from './utils/type';
 import './App.css';
 import { TodoForm } from './components/TodoForm';
 import { TodoListItem } from './components/TodoListItem';
 import {TodoList} from './components/TodoList';
-function App() {
+
+const  App=() => {
   const [todos,setTodos] = useState<Array<Todo>>([]);
 
   const addTodo:AddTodo = newTodo =>{
          if(newTodo !== ""){
-           setTodos([...todos, {text: newTodo, complete:false}]);
+           setTodos([...todos, {id:+1, text: newTodo, complete:false}]);
          }
   }
   const ToggleComplete:ToggleComplete = selectTodo =>{
@@ -21,6 +22,11 @@ function App() {
     })
     setTodos(updateTodos)
   }
+  const ToggleDelete:ToggleDelete = selectedTodo =>{
+   const updateTodos = todos.filter(todo => todo.text !== selectedTodo.text)
+   setTodos(updateTodos);
+  }
+  
   /*
  const saveData = () =>{
 localStorage.setItem("list", JSON.stringify(todos))
@@ -34,7 +40,7 @@ localStorage.setItem("list", JSON.stringify(todos))
   return (
     <div>
 <h1>TITOLO</h1>
-<TodoList todos={todos} toggleComplete={ToggleComplete}/>
+<TodoList todos={todos} toggleDelete={ToggleDelete}  toggleComplete={ToggleComplete}/>
     <TodoForm addTodo={addTodo}/>
     </div>
   );
