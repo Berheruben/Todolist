@@ -69,11 +69,45 @@ flex-grow: 0;
 const Form=styled.form`
 
 `;
-const C1=styled.div`
+const Container=styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px;
+gap: 24px;
+
+position: absolute;
+width: 1632px;
+height: 505px;
+left: 144px;
+top: 168px;
+}
 `;
-const C2=styled.div`
+const Todolist=styled.div`
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 80px 160px;
+gap: 8px;
+
+width: 1632px;
+height: 409px;
+
+background: #242424;
+box-shadow: 4px 12px 24px rgba(0, 0, 0, 0.25);
+border-radius: 32px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
 `;
-const C3=styled.div`
+const CenterPadding=styled.div`
+
+`;
+const Card = styled.div`
+
 `;
 const H1= styled.h1`
 
@@ -82,7 +116,21 @@ const C4=styled.div`
 `;
 const Ul=styled.ul`
 `;
+const Input= styled.input`
 
+`;
+const Flex = styled.div`
+
+`;
+const AddtodoText=styled.div`
+
+`;
+const Flex2=styled.div`
+
+`;
+const BtnNewVoice= styled.button`
+
+`;
 export const TodoForm: React.FC<TodoFormProps> = ({addTodo})=>{
 
     const[newTodo,setNewTodo] = useState<string>("")
@@ -102,23 +150,15 @@ const [modal, setModal] = useState(false);
   };
     return(
         <>
-<C1>
-    <C2>
-    <C3>
-    <H1>titolo</H1>
-    <C4>
-<Ul id="List">
-    
-</Ul>
-    </C4>
-    </C3>        
-    </C2>
-    </C1>
+       
 
+             <CenterPadding>
+           <BtnNewVoice onClick={toggleModal}>
+nuova voce
+      </BtnNewVoice>
+           </CenterPadding>
 
-       <button onClick={toggleModal}>
-        nuova voce
-      </button>
+       
       {modal &&
 
           <Form>

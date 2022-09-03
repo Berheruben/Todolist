@@ -2,8 +2,8 @@ export type AddTodo = (newTodo: string) => void
 
 
 export type Todo = {
-id:number;
-text:string;
+
+text:String;
 complete: boolean;
 };
 export interface TodoListItemProps{
