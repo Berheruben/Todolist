@@ -1,5 +1,5 @@
 import React from "react"
-import { TodoListItemProps } from "../utils/type"
+import { TodoListItemProps } from "../types/types"
 import styled from "styled-components"
 import Bin from '../image/Bin.svg'
 

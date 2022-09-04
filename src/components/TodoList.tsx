@@ -1,6 +1,6 @@
 import React from "react"
 import { TodoListItem } from "./TodoListItem"
-import { Todo, ToggleComplete, ToggleDelete} from '../utils/type'
+import { Todo, ToggleComplete, ToggleDelete} from '../types/types'
 import styled from 'styled-components'
 
 const Container = styled.div`

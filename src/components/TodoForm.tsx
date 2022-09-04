@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useState, FormEvent } from 'react'
-import {TodoFormProps} from '../utils/type'
+import {TodoFormProps} from '../types/types'
 import styled from 'styled-components'
 import Adds from '../image/Adds.svg';
 import { Button } from './Button';
@@ -104,17 +104,17 @@ width: 430px;
 border-color: Transparent;
 `
 export const TodoForm: React.FC<TodoFormProps> = ({ addTodo })=>{
-    const[todo, setTodo] = useState<string>('')
+    const[message, setMessage] = useState<string>('')
     const [modal, setModal] = useState<boolean>(false)
     const handleChange = (e: ChangeEvent <HTMLTextAreaElement>)=>{
-        setTodo(e.target.value)
+        setMessage(e.target.value)
     }
     const handlesubmit = (e:FormEvent<HTMLButtonElement>) =>{
       e.preventDefault()
-      addTodo(todo)
+      addTodo(message)
 
       // reset local state
-      setTodo('')
+      setMessage('')
 
       // close modal
       setModal(false)
@@ -135,7 +135,7 @@ export const TodoForm: React.FC<TodoFormProps> = ({ addTodo })=>{
               <FormContainer>
                   <Overlay onClick={toggleModal}/>
                   <Modalcontent>
-                    <Textarea value={todo} className="todo-input" onChange={handleChange}/>
+                    <Textarea value={message} className="todo-input" onChange={handleChange}/>
                     
                     <Btnintotheform type="submit" onClick={handlesubmit}>Salva</Btnintotheform>
                    

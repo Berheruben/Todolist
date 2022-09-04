@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {AddTodo,Todo,ToggleComplete,ToggleDelete} from './utils/type';
+import {AddTodo,Todo,ToggleComplete,ToggleDelete} from './types/types';
 import './App.css';
 import { TodoForm } from './components/TodoForm';
 import {TodoList} from './components/TodoList';
