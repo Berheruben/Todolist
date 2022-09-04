@@ -6,7 +6,7 @@ import Bin from '../images/Bin.svg'
 const Label = styled.label`
 width: 1168px;
 height: 38px;
-font-family: 'Inter';
+font-family: 'roboto';
 font-style: normal;
 font-weight: 300;
 font-size: 24px;
@@ -53,6 +53,7 @@ padding: 10px;
 height: 35px;
 font-size: 110%;
 display: inline;
+font-family: 'roboto';
 `;
 const Todo = styled.div`
 align-items: center;
