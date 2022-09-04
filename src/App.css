@@ -5,8 +5,6 @@
 .completed{
   text-decoration: line-through;
 }
-.todo-input::placeholder {
-  color: white;
-}
+
 
 
