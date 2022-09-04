@@ -19,8 +19,8 @@ export const loadData = () => {
 }
 
 const App = () => {
-  const [todos, setTodos] = useState<Array<Todo>>(loadData());
-  const addTodo: AddTodo = text => {
+  const [todos, setTodos] = useState<Todo[]>(loadData())
+  const addTodo: AddTodo = (text: string) => {
     if (text) setTodos(todos => [
       ...todos,
       { id: todos.length + 1, text, complete: false }
@@ -35,7 +35,6 @@ const App = () => {
       return todo
     })
       // Sort array by putting the completed item at the bottom of the list
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       .sort((a, _) => a.complete ? 1 : -1)
     setTodos(updateTodos)
   }

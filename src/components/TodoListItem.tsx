@@ -1,7 +1,7 @@
 import React from "react"
 import { TodoListItemProps } from "../types/types"
 import styled from "styled-components"
-import Bin from '../image/Bin.svg'
+import Bin from '../images/Bin.svg'
 
 const Label = styled.label`
 width: 1168px;

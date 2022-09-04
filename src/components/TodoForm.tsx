@@ -1,7 +1,7 @@
 import React, { ChangeEvent, useState, FormEvent } from 'react'
 import { TodoFormProps } from '../types/types'
 import styled from 'styled-components'
-import Adds from '../image/Adds.svg';
+import Adds from '../images/Adds.svg';
 import { Button } from './Button';
 
 const Overlay = styled.div`
@@ -13,7 +13,6 @@ right: 0;
 bottom: 0;
 position: fixed;
 background: rgba(49,49,49,0.8);
-    
   `;
 const Modalcontent = styled.div`
 position: absolute;
@@ -29,8 +28,6 @@ min-width: 300px;
 background:#2f2f2f;
 align-content: center;
   `;
-
-
 const AddsImage = styled.img`
 width: 40px;
 height: 40px;
