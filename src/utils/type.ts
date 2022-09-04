@@ -2,10 +2,11 @@ export type AddTodo = (newTodo: string) => void
 
 
 export type Todo = {
+    id: number
+    text: string
+    complete: boolean
+}
 
-text:String;
-complete: boolean;
-};
 export interface TodoListItemProps{
     todo:Todo;
     toggleComplete: ToggleComplete;

@@ -1,51 +1,52 @@
-import React from "react";
-import { TodoListItem } from "./TodoListItem";
-import {AddTodo,Todo,ToggleComplete,TodoListItemProps,ToggleDelete} from '../utils/type'
+import React from "react"
+import { TodoListItem } from "./TodoListItem"
+import { Todo, ToggleComplete, ToggleDelete} from '../utils/type'
 import styled from 'styled-components'
 
-const Container3 = styled.div`
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 80px 160px;
-gap: 8px;
-
-width: 1632px;
-height: 409px;
-
+const Container = styled.div`
+padding: 3vw 1vw;
 background: #242424;
-box-shadow: 4px 12px 24px rgba(0, 0, 0, 0.25);
 border-radius: 32px;
-
-/* Inside auto layout */
-
-flex: none;
-order: 0;
-flex-grow: 0;
 `;
+
+const Title = styled.h1`
+margin:33px;
+width: 1312px;
+height: 65px;
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 54px;
+line-height: 65px;
+color: #FFFFFF;
+`;
+
 interface TodoListProps { 
     todos:Array<Todo>;
     toggleComplete: ToggleComplete
     toggleDelete: ToggleDelete
 }
-export const TodoList : React.FC < TodoListProps > = ( { todos , toggleComplete , toggleDelete} ) =>{
+
+export const TodoList: React.FC<TodoListProps> = ({
+     todos, 
+     toggleComplete, 
+     toggleDelete
+}) =>{
     return(
-        <Container3>
-
-        <ul>
-            <label style={{color:"white"}}>
-
- {todos.map(todo =>(
-     <TodoListItem
-     
-     toggleDelete={toggleDelete}
-     toggleComplete={toggleComplete}
-     todo={todo}
-     />
-     ))}
-     </label>   
-        </ul>
-     </Container3>
+        <Container>
+        <Title>TODOS</Title>
+            <div style={{}}>
+                <label style={{color:"white"}}>
+                    {todos.map(todo =>(
+                        <TodoListItem
+                            toggleDelete={toggleDelete}
+                            toggleComplete={toggleComplete}
+                            todo={todo}
+                        />
+                    ))}
+                </label>   
+            </div>
+        </Container>
     )
 }
 export default TodoList
