@@ -1,10 +1,10 @@
 import React, { ChangeEvent, useState, FormEvent } from 'react'
-import {TodoFormProps} from '../types/types'
+import { TodoFormProps } from '../types/types'
 import styled from 'styled-components'
 import Adds from '../image/Adds.svg';
 import { Button } from './Button';
 
-const Overlay= styled.div`
+const Overlay = styled.div`
 width: 100vw;
 height: 100vh;
 top: 0;
@@ -15,7 +15,7 @@ position: fixed;
 background: rgba(49,49,49,0.8);
     
   `;
-const Modalcontent= styled.div`
+const Modalcontent = styled.div`
 position: absolute;
 top: 40%;
 left: 50%;
@@ -103,45 +103,45 @@ resize: none;
 width: 430px;
 border-color: Transparent;
 `
-export const TodoForm: React.FC<TodoFormProps> = ({ addTodo })=>{
-    const[message, setMessage] = useState<string>('')
-    const [modal, setModal] = useState<boolean>(false)
-    const handleChange = (e: ChangeEvent <HTMLTextAreaElement>)=>{
-        setMessage(e.target.value)
-    }
-    const handlesubmit = (e:FormEvent<HTMLButtonElement>) =>{
-      e.preventDefault()
-      addTodo(message)
+export const TodoForm: React.FC<TodoFormProps> = ({ addTodo }) => {
+  const [message, setMessage] = useState<string>('')
+  const [modal, setModal] = useState<boolean>(false)
+  const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    setMessage(e.target.value)
+  }
+  const handlesubmit = (e: FormEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    addTodo(message)
 
-      // reset local state
-      setMessage('')
+    // reset local state
+    setMessage('')
 
-      // close modal
-      setModal(false)
-    }
+    // close modal
+    setModal(false)
+  }
   const toggleModal = () => {
     setModal(!modal)
   }
 
-    return(
-        <>
-           <Button onClick={toggleModal}>
-            <Plus>
-                <AddsImage src={Adds}/>
-                <NewLabel>Nuova voce</NewLabel>
-            </Plus>
-          </Button>
-          {modal &&
-              <FormContainer>
-                  <Overlay onClick={toggleModal}/>
-                  <Modalcontent>
-                    <Textarea value={message} className="todo-input" onChange={handleChange}/>
-                    
-                    <Btnintotheform type="submit" onClick={handlesubmit}>Salva</Btnintotheform>
-                   
-                  </Modalcontent>         
-              </FormContainer>
-            }
-        </>
-    )
+  return (
+    <>
+      <Button onClick={toggleModal}>
+        <Plus>
+          <AddsImage src={Adds} />
+          <NewLabel>Nuova voce</NewLabel>
+        </Plus>
+      </Button>
+      {modal &&
+        <FormContainer>
+          <Overlay onClick={toggleModal} />
+          <Modalcontent>
+            <Textarea value={message} className="todo-input" onChange={handleChange} />
+
+            <Btnintotheform type="submit" onClick={handlesubmit}>Salva</Btnintotheform>
+
+          </Modalcontent>
+        </FormContainer>
+      }
+    </>
+  )
 }

@@ -54,35 +54,35 @@ height: 35px;
 font-size: 110%;
 display: inline;
 `;
-const Todo= styled.div`
+const Todo = styled.div`
 align-items: center;
 display: flex;
 flex-direction: row;
 margin-bottom: 16px;
 transition: all .3s ease-in-out;
 `
-export const TodoListItem:React.FC<TodoListItemProps> = ({
-    todo, 
-    toggleComplete, 
+export const TodoListItem: React.FC<TodoListItemProps> = ({
+    todo,
+    toggleComplete,
     toggleDelete
-}) =>{
-    return(
+}) => {
+    return (
         <Container>
             <Todo>
-            <Binbtn 
-                type="button" 
-                onClick={()=>toggleDelete(todo)} 
-            >
-                <Binimg src={Bin}/>
-            </Binbtn>
-            <Check 
-                type="checkbox"
-                checked={todo.complete}
-                onClick={()=>toggleComplete(todo)} 
-            />
-            <Label className={todo.complete ? "completed" : "todo-row"} >
-                {todo.text}
-            </Label>
+                <Binbtn
+                    type="button"
+                    onClick={() => toggleDelete(todo)}
+                >
+                    <Binimg src={Bin} />
+                </Binbtn>
+                <Check
+                    type="checkbox"
+                    checked={todo.complete}
+                    onClick={() => toggleComplete(todo)}
+                />
+                <Label className={todo.complete ? "completed" : "todo-row"} >
+                    {todo.text}
+                </Label>
             </Todo>
         </Container>
     )

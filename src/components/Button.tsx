@@ -24,24 +24,24 @@ const styles = {
     }
 }
 
-export const Button: React.FC<ButtonProps> = ({ 
-    onClick, 
-    children, 
+export const Button: React.FC<ButtonProps> = ({
+    onClick,
+    children,
     buttonType = ButtonType.medium
- }) => {
-     // select additional style
+}) => {
+    // select additional style
     const style = styles[buttonType]
 
-    return ( 
-    <div onClick={onClick}>
-        <StyledButton style={style}>
-            {children}
-        </StyledButton>
-    </div>
+    return (
+        <div onClick={onClick}>
+            <StyledButton style={style}>
+                {children}
+            </StyledButton>
+        </div>
     )
 }
 
-const StyledButton= styled.button`
+const StyledButton = styled.button`
 border-color: transparent; 
 display: flex;
 justify-content: center;

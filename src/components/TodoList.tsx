@@ -1,6 +1,6 @@
 import React from "react"
 import { TodoListItem } from "./TodoListItem"
-import { Todo, ToggleComplete, ToggleDelete} from '../types/types'
+import { Todo, ToggleComplete, ToggleDelete } from '../types/types'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -21,28 +21,28 @@ line-height: 65px;
 color: #FFFFFF;
 `;
 
-interface TodoListProps { 
-    todos:Array<Todo>;
+interface TodoListProps {
+    todos: Array<Todo>;
     toggleComplete: ToggleComplete
     toggleDelete: ToggleDelete
 }
 
 export const TodoList: React.FC<TodoListProps> = ({
-     todos, 
-     toggleComplete, 
-     toggleDelete
-}) =>{
-    return(
+    todos,
+    toggleComplete,
+    toggleDelete
+}) => {
+    return (
         <Container>
-        <Title>TODOS</Title>
+            <Title>TODOS</Title>
             <div style={{}}>
-                    {todos.map(todo =>(
-                        <TodoListItem
-                            toggleDelete={toggleDelete}
-                            toggleComplete={toggleComplete}
-                            todo={todo}
-                        />
-                    ))}
+                {todos.map(todo => (
+                    <TodoListItem
+                        toggleDelete={toggleDelete}
+                        toggleComplete={toggleComplete}
+                        todo={todo}
+                    />
+                ))}
             </div>
         </Container>
     )
