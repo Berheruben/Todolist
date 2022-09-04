@@ -26,7 +26,6 @@ border-radius: 3px;
 max-width: 600px;
 min-width: 300px;
 background:#2f2f2f;
-align-content: center;
   `;
 const AddsImage = styled.img`
 width: 40px;
@@ -41,10 +40,10 @@ display: flex;
 flex-direction: row;
 align-items: center;
 `;
-const NewLabel = styled.label`
+const Label = styled.label`
 width: 135px;
 height: 38px;
-font-family: 'Inter';
+font-family: 'Roboto';
 font-style: normal;
 font-weight: 500;
 font-size: 24px;
@@ -100,6 +99,13 @@ resize: none;
 width: 430px;
 border-color: Transparent;
 `
+const ButtonContainer = styled.div`
+display: block; 
+margin-left: auto; 
+margin-right: auto; 
+margin-top: 24px;
+`
+
 export const TodoForm: React.FC<TodoFormProps> = ({ addTodo }) => {
   const [message, setMessage] = useState<string>('')
   const [modal, setModal] = useState<boolean>(false)
@@ -122,20 +128,20 @@ export const TodoForm: React.FC<TodoFormProps> = ({ addTodo }) => {
 
   return (
     <>
-      <Button onClick={toggleModal}>
-        <Plus>
-          <AddsImage src={Adds} />
-          <NewLabel>Nuova voce</NewLabel>
-        </Plus>
-      </Button>
+      <ButtonContainer>
+        <Button onClick={toggleModal}>
+          <Plus>
+            <AddsImage src={Adds} />
+            <Label>Nuova voce</Label>
+          </Plus>
+        </Button>
+      </ButtonContainer>
       {modal &&
         <FormContainer>
           <Overlay onClick={toggleModal} />
           <Modalcontent>
-            <Textarea value={message} className="todo-input" onChange={handleChange} />
-
+            <Textarea value={message} onChange={handleChange} />
             <Btnintotheform type="submit" onClick={handlesubmit}>Salva</Btnintotheform>
-
           </Modalcontent>
         </FormContainer>
       }
