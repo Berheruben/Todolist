@@ -36,7 +36,6 @@ export const TodoList: React.FC<TodoListProps> = ({
         <Container>
         <Title>TODOS</Title>
             <div style={{}}>
-                <label style={{color:"white"}}>
                     {todos.map(todo =>(
                         <TodoListItem
                             toggleDelete={toggleDelete}
@@ -44,7 +43,6 @@ export const TodoList: React.FC<TodoListProps> = ({
                             todo={todo}
                         />
                     ))}
-                </label>   
             </div>
         </Container>
     )
