@@ -1,40 +1,16 @@
 import styled from "styled-components"
 
-enum ButtonType {
-    large = 'large',
-    medium = 'medium',
-    small = 'small'
-}
-
 type ButtonProps = {
     onClick: () => void,
     children: any,
-    buttonType?: ButtonType
 }
-
-const styles = {
-    [ButtonType.large]: {
-
-    },
-    [ButtonType.medium]: {
-
-    },
-    [ButtonType.small]: {
-        fontSize: '21px'
-    }
-}
-
 export const Button: React.FC<ButtonProps> = ({
     onClick,
     children,
-    buttonType = ButtonType.medium
 }) => {
-    // select additional style
-    const style = styles[buttonType]
-
     return (
         <div onClick={onClick}>
-            <StyledButton style={style}>
+            <StyledButton>
                 {children}
             </StyledButton>
         </div>
