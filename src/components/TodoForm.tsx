@@ -4,15 +4,15 @@ import styled from 'styled-components'
 import Adds from '../image/Adds.svg';
 import { Button } from './Button';
 
-  const Overlay= styled.div`
-   width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    position: fixed;
-    background: rgba(49,49,49,0.8);
+const Overlay= styled.div`
+width: 100vw;
+height: 100vh;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+position: fixed;
+background: rgba(49,49,49,0.8);
     
   `;
 const Modalcontent= styled.div`

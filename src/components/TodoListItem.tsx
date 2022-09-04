@@ -27,7 +27,6 @@ align-self: stretch;
 flex-grow: 0;
 max-height: 50vh;
 overflow-y: scroll;
-
 `;
 
 const Binimg = styled.img`

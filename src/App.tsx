@@ -10,7 +10,7 @@ display: flex;
 flex: 1 1;
 flex-direction: column;
 padding: 8vw 9vw;
-`
+`;
 
 export const loadData = ()=>{
   const TaskJSON = localStorage.getItem('todos')
